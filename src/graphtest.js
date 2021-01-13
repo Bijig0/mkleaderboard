@@ -1,52 +1,30 @@
 const { ApolloServer, gql } = require("apollo-server");
+const fetch = require("node-fetch")
 
 const typeDefs = gql`
 type Query {
-    Placeholder:String
-},
-input UserInfo {
-    username:String,
-    password:String
+      ranking:[Ranking]
 }
-  type Errors {
-      examples: String
-},
 type User {
-    name: String,
-    Age: Int
-},
-  type Mutation {
-      errors: [Errors],
-      user(userinfo:UserInfo):[User]
-  }
+    nickname: String
+}
+type Ranking {
+    position: Int
+    label: String
+    user: User
+}
 `;
 
 
 
 const resolvers ={
-  Mutation: {
-      errors: () => (
-          [
-              {
-                  examples:'404'
-              },
-              {
-                  examples:'Error'
-              }
-          ]
-      ),
-      user: () => (
-          [
-              {
-                  name:"Jack",
-                  Age:50
-              },
-              {
-                  name:'John',
-                  Age:30
-              }
-          ]
-      )
+  Query: {
+      ranking: async () => {
+          const response = await fetch('https://api.eslgaming.com/play/v1/leagues/217909/ranking?limit=0&offset=0')
+          const parsed = await response.json()
+          const ranking = await parsed.ranking
+          return ranking
+      }
   }
 }
 
