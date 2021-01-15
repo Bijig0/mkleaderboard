@@ -15,10 +15,10 @@ function App() {
   const postsPerPage = 8
   const [CompiledDataToBeMerged, setCompiledDataToBeMerged] = useState([])
   const [FinalLeaderboard, setFinalLeaderboard] = useState([])
-  // const users = useFetch('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/217909/ranking?limit=0&offset=0')
-  // const secondusers = useFetch('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/218227%20/ranking?limit=0&offset=0')
-  const users = data
-  const listofAllTourneys = [users]
+  const users = useFetch('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/217909/ranking?limit=0&offset=0')
+  const secondusers = useFetch('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/218227%20/ranking?limit=0&offset=0')
+  // const users = data
+  const listofAllTourneys = [users,secondusers]
 
   const lastIndexOfPage = currentPage * postsPerPage
   const firstIndexofPage = lastIndexOfPage - postsPerPage
@@ -61,7 +61,7 @@ function App() {
     })}
     <Pagination postsPerPage={postsPerPage} totalPosts={FinalLeaderboard.length} paginate={paginate}/>
 
-      {users.length > 0 && listofAllTourneys.map((tourney) => {
+      {users.length > 0 && secondusers.length > 0 && listofAllTourneys.map((tourney) => {
         return (
         <Tourney tourney={tourney} setCompiledDataToBeMerged={setCompiledDataToBeMerged}/>
       )})}
@@ -70,11 +70,9 @@ function App() {
   );
 }
 
-// make the final list in the app when you have all the lists available, and then send the final list down as props
-
+// u dont need to pass all the shit as children and then back from children to parent, you can just do all the mapping in parent
 // find way to make labelvalue fire once removelabel is done using async await i reckon
 
-// firstly update individual player with the value, then send it to tourney, have a list in tourney that appends all of it, then once each tourney is created go ahead and send it abck to the initial one and then do the merging algorithm on that
 
 const Tourney = ({tourney,setCompiledDataToBeMerged}) => {
   return (
