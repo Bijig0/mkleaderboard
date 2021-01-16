@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './All Countries/Brazil';
 import reportWebVitals from './reportWebVitals';
 import Banner from './Components/Navbar'
+import {  BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <Router>
     <Banner/>
+    <Route exact path ='/'>
+      <App/>
+    </Route>
+
+    </Router>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

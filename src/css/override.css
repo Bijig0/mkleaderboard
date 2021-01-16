@@ -1,0 +1,34 @@
+
+.title-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: 50%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    margin: 0 auto 30px;
+    font-family: "mkserif",Times New Roman,serif;
+    font-size: .725rem;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+  margin-bottom: 12vw;
+}
+
+.golden {
+  display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: scaleY(1.4);
+  box-sizing: border-box;
+}
+
+.inside-Golden {
+    position: relative;
+    top: 4vw;
+}

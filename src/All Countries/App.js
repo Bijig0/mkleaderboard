@@ -1,15 +1,15 @@
-import './App.css';
+import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import{ useEffect,useState } from 'react'
-import useFetch from './fetch'
-import useParse from './parse'
-import Pagination from './pagination'
-import data from './data'
+import useFetch from '../fetch'
+import useParse from '../parse'
+import Pagination from '../pagination'
+import GoldenDiv from '../img/goldenplaceholder (2).png'
+import '../css/override.css'
 const fetch = require("node-fetch")
-
 const TourneyUsersWithValues = []
 
-function App() {
+export function App() {
   const [currentPosts,setCurrentPosts] = useState([])
   const [currentPage, setcurrentPage] = useState(1)
   const postsPerPage = 8
@@ -22,6 +22,11 @@ function App() {
 
   const lastIndexOfPage = currentPage * postsPerPage
   const firstIndexofPage = lastIndexOfPage - postsPerPage
+  const fullIndexes = []
+
+  for (let i = firstIndexofPage; i <= lastIndexOfPage; i++) {
+    fullIndexes.push(i)
+  }
 
   const mergeData = (dataToBeMerged) => {
     const res = Array.from(dataToBeMerged.reduce(
@@ -56,8 +61,8 @@ function App() {
 
   return (
     <>
-    {currentPosts.map((Person) => {
-      return <Individualperson {...Person}/>
+    {currentPosts.map((Person,index) => {
+      return <Individualperson {...Person} index={fullIndexes[index]} />
     })}
     <Pagination postsPerPage={postsPerPage} totalPosts={FinalLeaderboard.length} paginate={paginate}/>
 
@@ -74,7 +79,7 @@ function App() {
 // find way to make labelvalue fire once removelabel is done using async await i reckon
 
 
-const Tourney = ({tourney,setCompiledDataToBeMerged}) => {
+export const Tourney = ({tourney,setCompiledDataToBeMerged}) => {
   return (
     <>
          {tourney.map((user) => {
@@ -91,7 +96,7 @@ const Tourney = ({tourney,setCompiledDataToBeMerged}) => {
 
 }
 
-const IndividualPlayerInfo = ({label,position,user,setCompiledDataToBeMerged}) => {
+export const IndividualPlayerInfo = ({label,position,user,setCompiledDataToBeMerged}) => {
   if (position == 4) {
     label = '4'
   }
@@ -117,12 +122,14 @@ const IndividualPlayerInfo = ({label,position,user,setCompiledDataToBeMerged}) =
 
 }
 
-const Individualperson = ({name,value}) => {
+export const Individualperson = ({name,value,index}) => {
   return (
-    <div className='d-flex'>
-    {/* <h1 className="display-1">{index}.</h1> */}
-    <h1 className="display-1">{name}</h1>
-    <h1 className="display-1 mx-5">{value}</h1>
+    <div className='title-banner text-center'>
+    <img className="golden" src={GoldenDiv}/>
+    {/* make the index from paginate */}
+    <h1 className="display-1 inside-Golden">{index+1}.</h1>
+    <h1 className="display-1 inside-Golden">{name}</h1>
+    <h1 className="display-1 mx-5 inside-Golden">{value}</h1>
     </div>
   )
 

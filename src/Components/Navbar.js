@@ -1,7 +1,8 @@
 import React from 'react'
-import {useState,useEffect} from 'react'
+import { useEffect,useState } from 'react'
 import logoBanner from '../img/MK11ProKompBanner.png'
 import uuid from 'react-uuid'
+import Data from "../data/data"
 
 const Banner = () => {
     return (
@@ -39,12 +40,6 @@ const RegionCardList = () => {
 
 
 const RegionalCard = ({Date,img,ListOfCountries}) => {
-    const [showCountryState,setShowCountryState] = useState(false)
-    const [countryName, setcountryName] = useState("")
-    const showCountry = (event) => {
-        setcountryName(event.target.innerText)
-        setShowCountryState(true)
-    }
     return (
         <div className="d-flex flex-column">
         <div className="col-md-6 px-5">
@@ -53,131 +48,42 @@ const RegionalCard = ({Date,img,ListOfCountries}) => {
             <h1 className="card-title">{Date}</h1>
             <div className="d-flex justify-content-between">
                 {ListOfCountries.map((Country) => {
-                    return <p key={uuid()} onClick={showCountry}>{Country.DisplayCountry}</p>
-                })}
+                    return (
+                    <DisplayRowOfMainCountries key={uuid()} {...Country} />
+                )})}
             </div>
         </div>
 </div>
-{showCountryState && <div className="text-center">
-            {ListOfCountries.map((Country) => {
-                if (Country.DisplayCountry === countryName)
-                            return (
-                            Country.SubcountryList.map((SubCountry) => {
-                                return <p>{SubCountry.Name}</p>
-                            })
-
-                        )})}
-                    </div>}
-
 </div>
 )
 }
 
-const Data = [
-    {
-        Date:'December 19 - June 6',
-        img: 'stock',
-        ListOfCountries: [
-            {
-                DisplayCountry: "North America",
-                SubcountryList: [
-                    {
-                        Name:"NA West",
-                        ListOfTournaments: [] 
-                    },
-                    {
-                        Name:"NA East",
-                        ListOfTournaments: []
-                    }
-                ]
-
-            },
-        ]},
-    {
-        Date:'December 12 - June 6',
-        img: 'stock',
-        ListOfCountries: [
-            {
-                DisplayCountry: "EU",
-                SubcountryList: [
-                    {
-                        Name:"EU West",
-                        ListOfTournaments: [] 
-                    },
-                    {
-                        Name:"EU East",
-                        ListOfTournaments: [] 
-                    }
-
-                ]
-
-            },
-            {
-                DisplayCountry: "OCE",
-                SubcountryList: [
-                    {
-                        Name:"OCE",
-                        ListOfTournaments: [] 
-                    }
-                ]
-
-            },
-            {
-                DisplayCountry: "ME",
-                SubcountryList: [
-                    {
-                        Name:"ME",
-                        ListOfTournaments: [] 
-                    }
-                ]
-
-            }
-            
-        ]
-    },
-    {
-        Date:'December 5 - June 6',
-        img: 'stock',
-        ListOfCountries:  [
-            {
-                DisplayCountry: "Latin America",
-                SubcountryList: [
-                    {
-                        Name:"Latin America East",
-                        ListOfTournaments: [] 
-                    },
-                    {
-                        Name:"Latin America West",
-                        ListOfTournaments: [] 
-                    }
-                ]
-
-            },
-            {
-                DisplayCountry: "Mexico",
-                SubcountryList: [
-                    {
-                        Name:"Mexico",
-                        ListOfTournaments: [] 
-                    }
-                ]
-
-            },
-            {
-                DisplayCountry: "Brazil",
-                SubcountryList: [
-                    {
-                        Name:"Brazil",
-                        ListOfTournaments: [] 
-                    }
-                ]
-
-            }
-            
-        ]
+const DisplayRowOfMainCountries = ({DisplayCountry,SubcountryList}) => {
+    const [showCountryState,setShowCountryState] = useState(false)
+    const [countryName, setcountryName] = useState("")
+    const showCountry = (event) => {
+        setcountryName(event.target.innerText)
+        setShowCountryState(true)
     }
+    return (
+        <div className='d-flex flex-direction-column'>
+        <p onClick={showCountry}>{DisplayCountry}</p>
+        {showCountryState && SubcountryList.map((SubCountry) => {
+            return <a href="#">{SubCountry.Name}</a>
+        }) }
+        </div>
+    )
 
-]
+}
+
+// Turn this last part that shows subcountry.name into its own file that returns subcountry.name, then put it into index.js as it returns ListOfTournament Urls
+
+// Depending on what country is clicked, access the link of urls, pass it into App as props, then map the url props and merge accordingly
+
+//If you want only 1 to show, you need to make a new component, then put the rest into a list, depending on the click add the id and delete all the rest sop that that is the only id left in the list and then display the list
+
+// for every country, if the name is equal to setname, display sub country names
+
 
 
 
