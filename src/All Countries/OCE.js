@@ -7,6 +7,5 @@ import Pagination from '../pagination'
 import data from './data'
 import GoldenDiv from '../img/goldenplaceholder (2).png'
 import '../css/override.css'
-import {}
 const fetch = require("node-fetch")
 const TourneyUsersWithValues = []
