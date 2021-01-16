@@ -9,16 +9,23 @@ import '../css/override.css'
 const fetch = require("node-fetch")
 const TourneyUsersWithValues = []
 
-export function App() {
+// Make useFetch all the urls, then as long as it has fetched and len bnigger than 0 (for loop) then run 
+
+// for (const url of urls) {
+//   listofAllTourneys.push(url)
+// }
+
+
+export function App({urls}) {
   const [currentPosts,setCurrentPosts] = useState([])
   const [currentPage, setcurrentPage] = useState(1)
   const postsPerPage = 8
   const [CompiledDataToBeMerged, setCompiledDataToBeMerged] = useState([])
   const [FinalLeaderboard, setFinalLeaderboard] = useState([])
-  const users = useFetch('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/217909/ranking?limit=0&offset=0')
-  const secondusers = useFetch('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/218227%20/ranking?limit=0&offset=0')
-  // const users = data
+  const users = useFetch(urls[0])
+  const secondusers = useFetch(urls[1])
   const listofAllTourneys = [users,secondusers]
+
 
   const lastIndexOfPage = currentPage * postsPerPage
   const firstIndexofPage = lastIndexOfPage - postsPerPage
@@ -76,7 +83,7 @@ export function App() {
 }
 
 // u dont need to pass all the shit as children and then back from children to parent, you can just do all the mapping in parent
-// find way to make labelvalue fire once removelabel is done using async await i reckon
+// find way to make labelvalue fire once removelabel is done use conditional useEffect put dependency as the thing that changes
 
 
 export const Tourney = ({tourney,setCompiledDataToBeMerged}) => {
@@ -109,14 +116,6 @@ export const IndividualPlayerInfo = ({label,position,user,setCompiledDataToBeMer
   }, [value])
   return (
     <div className="d-flex">
-    {/* <h1 className="display-1">{correctPosition}.</h1>
-    <h1 className="display-1">{user.nickname}</h1>
-    <h1 className="display-1 mx-5">{value}</h1>
-    <h1 onClick={() => {
-      console.log(TourneyUsersWithValues)
-      console.log(value)
-    }
-     }>Click Me</h1> */}
     </div>
   )
 
@@ -126,10 +125,9 @@ export const Individualperson = ({name,value,index}) => {
   return (
     <div className='title-banner text-center'>
     <img className="golden" src={GoldenDiv}/>
-    {/* make the index from paginate */}
-    <h1 className="display-1 inside-Golden">{index+1}.</h1>
+    <h1 className="display-1 inside-Golden index-Golden">{index+1}.</h1>
     <h1 className="display-1 inside-Golden">{name}</h1>
-    <h1 className="display-1 mx-5 inside-Golden">{value}</h1>
+    <h1 className="display-1 mx-5 inside-Golden value-Golden">{value}</h1>
     </div>
   )
 

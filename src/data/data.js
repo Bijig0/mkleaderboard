@@ -16,11 +16,11 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 1",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217877%20/ranking?limit=0&offset=0                                "
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                url: header + ""
+                                // url: header + ""
                             }
                         ] 
                     },
@@ -33,11 +33,11 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 1",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217876%20/ranking?limit=0&offset=0                                "
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                url: header + ""
+                                // url: header + ""
                             }
                         ] 
                     }
@@ -61,11 +61,11 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 1",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/218104%20/ranking?limit=0&offset=0                                "
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/218106%20/ranking?limit=0&offset=0                                "
                             }
                         ] 
                     },
@@ -78,11 +78,11 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 1",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/218064%20/ranking?limit=0&offset=0                                "
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/218066%20/ranking?limit=0&offset=0                                "
                             }
                         ] 
                     }
@@ -102,11 +102,11 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 1",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217909/ranking?limit=0&offset=0"
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/218227%20/ranking?limit=0&offset=0"
                             }
                         ] 
                     }
@@ -125,11 +125,11 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 1",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/218136%20/ranking?limit=0&offset=0                                "
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/218140%20/ranking?limit=0&offset=0                                "
                             }
                         ] 
                     }
@@ -147,7 +147,7 @@ const Data = [
                 DisplayCountry: "Latin America",
                 SubcountryList: [
                     {
-                        Name:"Latin America East",
+                        Name:"Latin America North",
                         ListOfTournaments: [
                             {
                                 TourneyName: "Final Leaderboard",
@@ -155,16 +155,16 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 1",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217874%20/ranking?limit=0&offset=0                                "
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217980%20/ranking?limit=0&offset=0                                "
                             }
                         ] 
                     },
                     {
-                        Name:"Latin America West",
+                        Name:"Latin America South",
                         ListOfTournaments:[
                             {
                                 TourneyName: "Final Leaderboard",
@@ -172,11 +172,11 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 1",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217875%20/ranking?limit=0&offset=0                                "
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217981%20/ranking?limit=0&offset=0                                "
                             }
                         ] 
                     }
@@ -195,11 +195,11 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 1",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217871%20/ranking?limit=0&offset=0                                "
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217978%20/ranking?limit=0&offset=0                                "
                             }
                         ] 
                     }
@@ -218,11 +218,11 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 1",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217873%20/ranking?limit=0&offset=0                                "
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217979%20/ranking?limit=0&offset=0                                "
                             }
                         ] 
                     }

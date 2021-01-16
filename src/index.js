@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './All Countries/Brazil';
+import {Brazil,LANorth,LASouth,ME,Mexico,NAEast,NAWest,EUEast,EUWest,OCE} from './All Countries/AllCountries';
 import reportWebVitals from './reportWebVitals';
 import Banner from './Components/Navbar'
 import {  BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
@@ -12,8 +12,37 @@ ReactDOM.render(
     <Router>
     <Banner/>
     <Route exact path ='/'>
-      <App/>
+      <OCE/>
     </Route>
+    <Route exact path ='/Brazil'>
+      <Brazil/>
+    </Route>
+    <Route exact path ='/EUEast'>
+      <EUEast/>
+    </Route>
+    <Route exact path ='/EUWest'>
+      <EUWest/>
+    </Route>
+    <Route exact path ='/LANorth'>
+      <LANorth/>
+    </Route>
+    <Route exact path ='/LASouth'>
+      <LASouth/>
+    </Route>
+    <Route exact path ='/ME'>
+      <ME/>
+    </Route>
+    <Route exact path ='/Mexico'>
+      <Mexico/>
+    </Route>
+    <Route exact path ='/NAWest'>
+      <NAWest/>
+    </Route>
+    <Route exact path ='/NAEast'>
+      <NAEast/>
+    </Route>
+    
+      
 
     </Router>
 

@@ -14,7 +14,8 @@
     text-align: center;
     text-transform: uppercase;
     line-height: 1;
-  margin-bottom: 12vw;
+    margin-bottom: 12vw;
+    margin-top: 3vw;
 }
 
 .golden {
