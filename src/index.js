@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {Brazil,LANorth,LASouth,ME,Mexico,NAEast,NAWest,EUEast,EUWest,OCE} from './All Countries/AllCountries';
 import reportWebVitals from './reportWebVitals';
-import Banner from './Components/Navbar'
+import Banner,{PosNameVal} from './Components/Navbar'
 import LinkNavbar from './Components/ListOfTourneyNavbar'
 import {  BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
@@ -12,11 +12,12 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
     <Banner/>
-    {/* <Switch>
-    <Route exact path ='/'> */}
+    <PosNameVal/>
+    <Switch>
+    <Route exact path ='/'>
+     {/* <LinkNavbar/> */}
       <OCE/>
-      <LinkNavbar/>
-    {/* </Route>
+    </Route>
     <Route exact path ='/Brazil'>
       <Brazil/>
     </Route>
@@ -44,7 +45,7 @@ ReactDOM.render(
     <Route exact path ='/NAEast'>
       <NAEast/>
     </Route>
-    </Switch> */}
+    </Switch>
     </Router>
 
   </React.StrictMode>,

@@ -10,7 +10,6 @@
     background-repeat: no-repeat;
     margin: 0 auto 30px;
     font-family: "mkserif",Times New Roman,serif;
-    font-size: .725rem;
     text-align: center;
     text-transform: uppercase;
     line-height: 1;
@@ -35,14 +34,25 @@
 
 .index-Golden {
   position: absolute;
-  margin-right: 50%;
+  margin-right: 60%;
   font-size: 5vw
 }
 
-.value-Golden {
+#value-Golden {
   position: absolute;
+  margin-left: 60%;
+  top: 4vw;
+  font-size: 5vw;
 }
 
 .text-Golden {
   font-size: 5vw
+}
+
+.Header {
+  font-size: 5vw;
+}
+
+.push {
+  margin-right: 4vw;
 }

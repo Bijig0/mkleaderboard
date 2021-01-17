@@ -51,7 +51,6 @@ export function App({urls}) {
   useEffect(() => {
     if (FinalLeaderboard) {
       setCurrentPosts(FinalLeaderboard.slice(firstIndexofPage,lastIndexOfPage))
-  
     }
   }, [FinalLeaderboard,currentPage])
    
@@ -127,7 +126,7 @@ export const Individualperson = ({name,value,index}) => {
     <img className="golden" src={GoldenDiv}/>
     <h1 className="display-1 inside-Golden index-Golden">{index+1}.</h1>
     <h1 className="display-1 inside-Golden text-Golden">{name}</h1>
-    <h1 className="display-1 mx-5 inside-Golden value-Golden">{value}</h1>
+    <h1 className="display-1 inside-Golden" id="value-Golden">{value}</h1>
     </div>
   )
 
