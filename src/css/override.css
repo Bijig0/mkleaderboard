@@ -14,7 +14,7 @@
     text-align: center;
     text-transform: uppercase;
     line-height: 1;
-    margin-bottom: 12vw;
+    margin-bottom: 14vw;
     margin-top: 3vw;
 }
 
@@ -22,7 +22,6 @@
   display: block;
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
     height: auto;
     transform: scaleY(1.4);
@@ -30,6 +29,20 @@
 }
 
 .inside-Golden {
-    position: relative;
+    position: absolute;
     top: 4vw;
+}
+
+.index-Golden {
+  position: absolute;
+  margin-right: 50%;
+  font-size: 5vw
+}
+
+.value-Golden {
+  position: absolute;
+}
+
+.text-Golden {
+  font-size: 5vw
 }

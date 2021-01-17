@@ -3,13 +3,14 @@ import { useEffect,useState } from 'react'
 import logoBanner from '../img/MK11ProKompBanner.png'
 import uuid from 'react-uuid'
 import Data from "../data/data"
+import {Link} from 'react-router-dom'
 
 const Banner = () => {
     return (
         <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-            <div class="navbar-collapse" id="navbarSupportedContent">
+            <div className="navbar-collapse" id="navbarSupportedContent">
                 <img src={logoBanner} alt="MK11" class="d-inline-block align-top" height="50"></img>
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <RegionCardList/>
@@ -68,11 +69,25 @@ const DisplayRowOfMainCountries = ({DisplayCountry,SubcountryList}) => {
         <li className="nav-item">
         <a className="nav-link dropdown-toggle mx-2" href="#" onClick={showCountry}>{DisplayCountry}</a>
         </li>
+        {/* make this shit its own component so you can make it a dropdown menu */}
+      
         {showCountryState && SubcountryList.map((SubCountry) => {
-            return <a href="#" className="nav-link mx-2">{SubCountry.Name}</a>
+            return <Link to="/ME" ><a href="#" className="nav-link mx-2">{SubCountry.Name}</a></Link>
         }) }
+        {/* {showCountryState && 
+            <ul className="dropdown-menu show">
+                {SubcountryList.map((Subcountry) => {
+                    return <h1>{Subcountry.Name}</h1>
+                })}
+            
+            </ul>} */}
+        {/* Also make the lists new Array each time so no overlapping */}
         </>
     )
+
+}
+
+const DropDown = () => {
 
 }
 

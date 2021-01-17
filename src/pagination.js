@@ -22,4 +22,6 @@ const Pagination = ({postsPerPage,totalPosts,paginate}) => {
     )
 }
 
+
+// Pagination problem is that onclick it goes to a new link that is not corresponding to the usual one
 export default Pagination

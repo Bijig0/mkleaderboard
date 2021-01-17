@@ -7,13 +7,9 @@ import Pagination from '../pagination'
 import GoldenDiv from '../img/goldenplaceholder (2).png'
 import '../css/override.css'
 const fetch = require("node-fetch")
-const TourneyUsersWithValues = []
+var TourneyUsersWithValues = []
 
-// Make useFetch all the urls, then as long as it has fetched and len bnigger than 0 (for loop) then run 
-
-// for (const url of urls) {
-//   listofAllTourneys.push(url)
-// }
+// make useFetch into regular function so you can loop through it
 
 
 export function App({urls}) {
@@ -47,6 +43,10 @@ export function App({urls}) {
     return byDate
 
   }
+
+  useEffect(() => {
+    TourneyUsersWithValues = []
+  })
 
   useEffect(() => {
     if (FinalLeaderboard) {
@@ -104,7 +104,7 @@ export const Tourney = ({tourney,setCompiledDataToBeMerged}) => {
 }
 
 export const IndividualPlayerInfo = ({label,position,user,setCompiledDataToBeMerged}) => {
-  if (position == 4) {
+  if (position === 4) {
     label = '4'
   }
   const [correctPosition,value] = useParse(label)
@@ -126,7 +126,7 @@ export const Individualperson = ({name,value,index}) => {
     <div className='title-banner text-center'>
     <img className="golden" src={GoldenDiv}/>
     <h1 className="display-1 inside-Golden index-Golden">{index+1}.</h1>
-    <h1 className="display-1 inside-Golden">{name}</h1>
+    <h1 className="display-1 inside-Golden text-Golden">{name}</h1>
     <h1 className="display-1 mx-5 inside-Golden value-Golden">{value}</h1>
     </div>
   )
