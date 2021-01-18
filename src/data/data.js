@@ -147,7 +147,7 @@ const Data = [
                 DisplayCountry: "Latin America",
                 SubcountryList: [
                     {
-                        Name:"Latin America North",
+                        Name:"LA North",
                         ListOfTournaments: [
                             {
                                 TourneyName: "Final Leaderboard",
@@ -164,7 +164,7 @@ const Data = [
                         ] 
                     },
                     {
-                        Name:"Latin America South",
+                        Name:"LA South",
                         ListOfTournaments:[
                             {
                                 TourneyName: "Final Leaderboard",

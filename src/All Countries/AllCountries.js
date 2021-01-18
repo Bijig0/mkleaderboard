@@ -31,7 +31,7 @@ export const EUWest = () => {
 export const LANorth = () => {
     return (
         <>
-        <App urls={urlGet("Latin America North")}/>
+        <App urls={urlGet("LA North")}/>
         </>
     )
 }
@@ -39,7 +39,7 @@ export const LANorth = () => {
 export const LASouth = () => {
     return (
         <>
-        <App urls={urlGet("Latin America South")}/>
+        <App urls={urlGet("LA South")}/>
         </>
     )
 }

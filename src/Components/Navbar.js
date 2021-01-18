@@ -102,7 +102,9 @@ const DisplayRowOfMainCountries = ({DisplayCountry,SubcountryList}) => {
         {/* THIS IS THE ISSUE WITH LINK TO AND A IS NESTED, FIX IT ONCE YOU CARE ENOUGH */}
       
         {showCountryState && SubcountryList.map((SubCountry) => {
-            return <Link to="/ME" ><a href="#" className="nav-link mx-2">{SubCountry.Name}</a></Link>
+          const SubCountryList = SubCountry.Name.split(" ")
+          const newWord = SubCountryList.join('')
+            return <Link to={newWord} ><a className="nav-link mx-2">{SubCountry.Name}</a></Link>
         }) }
         {/* {showCountryState && 
             <ul className="dropdown-menu show">
@@ -116,9 +118,6 @@ const DisplayRowOfMainCountries = ({DisplayCountry,SubcountryList}) => {
 
 }
 
-const DropDown = () => {
-
-}
 
 {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">

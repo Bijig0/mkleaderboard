@@ -11,7 +11,7 @@ const SearchFilter = () => {
     }
     return (
         <form className="d-flex" onSubmit={submitHandler}>
-        <input className="form-control me-2" placeholder="Search For Player" onChange={changeHandler}/>
+        <input className="form-control me-2" placeholder="Coming Soon..." onChange={changeHandler}/>
         <button className="btn btn-outline-success" type="submit">Search</button>
 
       </form>

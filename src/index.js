@@ -5,6 +5,7 @@ import {Brazil,LANorth,LASouth,ME,Mexico,NAEast,NAWest,EUEast,EUWest,OCE} from '
 import reportWebVitals from './reportWebVitals';
 import Banner,{PosNameVal} from './Components/Navbar'
 import LinkNavbar from './Components/ListOfTourneyNavbar'
+import {Footer} from './Components/Footer'
 import {  BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 
@@ -15,7 +16,10 @@ ReactDOM.render(
     <PosNameVal/>
     <Switch>
     <Route exact path ='/'>
-     <LinkNavbar/>
+     {/* <LinkNavbar/> */}
+      <OCE/>
+    </Route>
+    <Route exact path = '/OCE'>
       <OCE/>
     </Route>
     <Route exact path ='/Brazil'>
@@ -46,6 +50,7 @@ ReactDOM.render(
       <NAEast/>
     </Route>
     </Switch>
+    <Footer/>
     </Router>
 
   </React.StrictMode>,
