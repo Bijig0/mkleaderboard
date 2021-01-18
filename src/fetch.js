@@ -17,9 +17,6 @@ const useFetch = (url) => {
       const parsed = await response.json()
       const ranking = await parsed.ranking
       setUsers(ranking)
-            
-   
-
   }
 
   useEffect(() => {

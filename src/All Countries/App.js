@@ -1,7 +1,7 @@
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import{ useEffect,useState } from 'react'
-import useFetch from '../fetch'
+import Fetch from '../fetch'
 import useParse from '../parse'
 import Pagination from '../pagination'
 import GoldenDiv from '../img/goldenplaceholder (2).png'
@@ -18,8 +18,8 @@ export function App({urls}) {
   const postsPerPage = 8
   const [CompiledDataToBeMerged, setCompiledDataToBeMerged] = useState([])
   const [FinalLeaderboard, setFinalLeaderboard] = useState([])
-  const users = useFetch(urls[0])
-  const secondusers = useFetch(urls[1])
+  const users = Fetch(urls[0])
+  const secondusers = Fetch(urls[1])
   const listofAllTourneys = [users,secondusers]
 
   const lastIndexOfPage = currentPage * postsPerPage
