@@ -51,7 +51,7 @@ ReactDOM.render(
       <NAEast/>
     </Route>
     </Switch>
-    {/* <Footer/> */}
+    <Footer/>
     </Router>
 
   </React.StrictMode>,
