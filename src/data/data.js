@@ -20,7 +20,7 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                // url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217983%20/ranking?limit=0&offset=0                                "
                             }
                         ] 
                     },
@@ -37,7 +37,7 @@ const Data = [
                             },
                             {
                                 TourneyName:"Tourney 2",
-                                // url: header + ""
+                                url: header + "https://api.eslgaming.com/play/v1/leagues/217982%20/ranking?limit=0&offset=0                                "
                             }
                         ] 
                     }

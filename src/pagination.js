@@ -7,14 +7,14 @@ const Pagination = ({postsPerPage,totalPosts,paginate}) => {
         pageNumbers.push(i);
     }
     return (
-        <div style={{width:'100%'}} className='d-flex justify-content-md-around'>
+        <div className='d-flex justify-content-around'>
             <ul className='pagination'>
                 {pageNumbers.map((number) => {
                     return (
                     <li key={number} className="page-item">
                         <a onClick={(e) => { 
                             e.preventDefault()
-                            paginate(number) }} href='!#' className='page-link mx-5'>
+                            paginate(number) }} href='!#' className='page-link mx-1'>
                             {number}
                         </a>
                     </li>
