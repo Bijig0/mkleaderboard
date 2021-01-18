@@ -7,6 +7,7 @@ import Banner,{PosNameVal} from './Components/Navbar'
 import LinkNavbar from './Components/ListOfTourneyNavbar'
 import {Footer} from './Components/Footer'
 import {  BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+require('dotenv').config()
 
 
 ReactDOM.render(
