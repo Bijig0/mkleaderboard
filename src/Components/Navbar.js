@@ -48,7 +48,7 @@ const Banner = () => {
                 </ul>
             </div>
             </div>
-            <SearchFilter/>
+            {/* <SearchFilter/> */}
         </nav>
     </>
       )
