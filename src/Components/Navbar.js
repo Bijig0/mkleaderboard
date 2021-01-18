@@ -10,7 +10,6 @@ import {Link} from 'react-router-dom'
 // 885px
 
 const Banner = () => {
-    const [Show, setShow] = useState(false)
     const [windowSize, setwindowSize] = useState(window.innerWidth)
     const checkSize = () => {
       setwindowSize(window.innerWidth)
@@ -39,8 +38,8 @@ const Banner = () => {
             <div className="container-fluid">
             <div className="navbar-collapse" id="navbarSupportedContent">
               {NavbarToShow?
-              <img src={logoBanner} alt="MK11" class="d-inline-block align-top" height="50"></img>:
-              <img src={logoBanner} alt="MK11" class="d-inline-block align-top" width="100%" onClick={() => setShow(false)} ></img>
+              <img src={logoBanner} alt="MK11" className="d-inline-block align-top" height="50"></img>:
+              <img src={logoBanner} alt="MK11" className="d-inline-block align-top" width="100%" onClick={() => setShow(false)} ></img>
             }
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 {NavbarToShow || Show ? <RegionCardList/> : 
@@ -99,7 +98,8 @@ const DisplayRowOfMainCountries = ({DisplayCountry,SubcountryList}) => {
         <li className="nav-item">
         <a className="nav-link dropdown-toggle mx-2" href="#" onClick={showCountry}>{DisplayCountry}</a>
         </li>
-        {/* make this shit its own component so you can make it a dropdown menu */}
+        {/* make this shit its own component so you can make it a dropdown menu (I CBA TO STYLE CSS) */}
+        {/* THIS IS THE ISSUE WITH LINK TO AND A IS NESTED, FIX IT ONCE YOU CARE ENOUGH */}
       
         {showCountryState && SubcountryList.map((SubCountry) => {
             return <Link to="/ME" ><a href="#" className="nav-link mx-2">{SubCountry.Name}</a></Link>
@@ -111,7 +111,6 @@ const DisplayRowOfMainCountries = ({DisplayCountry,SubcountryList}) => {
                 })}
             
             </ul>} */}
-        {/* Also make the lists new Array each time so no overlapping */}
         </>
     )
 

@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 
-const useParse = (label) => {
+const Parser = (label) => {
   const [correctPosition,setCorrectPosition] = useState("")
   const [value,setValue] = useState(0)
 
@@ -58,7 +58,7 @@ const useParse = (label) => {
       labelValue()
     }, [correctPosition])
 
-    return [correctPosition,value]
+    return value
 }
 
-export default useParse
+export default Parser

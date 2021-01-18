@@ -6,7 +6,7 @@ import useParse from '../parse'
 import Pagination from '../pagination'
 import GoldenDiv from '../img/goldenplaceholder (2).png'
 import '../css/override.css'
-const fetch = require("node-fetch")
+import SearchFilter from '../Components/SearchFilter';
 var TourneyUsersWithValues = []
 
 // make useFetch into regular function so you can loop through it
@@ -21,7 +21,6 @@ export function App({urls}) {
   const users = useFetch(urls[0])
   const secondusers = useFetch(urls[1])
   const listofAllTourneys = [users,secondusers]
-
 
   const lastIndexOfPage = currentPage * postsPerPage
   const firstIndexofPage = lastIndexOfPage - postsPerPage
@@ -46,7 +45,7 @@ export function App({urls}) {
 
   useEffect(() => {
     TourneyUsersWithValues = []
-  })
+  },[urls])
 
   useEffect(() => {
     if (FinalLeaderboard) {
@@ -74,7 +73,9 @@ export function App({urls}) {
 
       {users.length > 0 && secondusers.length > 0 && listofAllTourneys.map((tourney) => {
         return (
-        <Tourney tourney={tourney} setCompiledDataToBeMerged={setCompiledDataToBeMerged}/>
+          tourney.map((user) => (
+            <IndividualPlayerInfo {...user} setCompiledDataToBeMerged={setCompiledDataToBeMerged}/>
+          ))
       )})}
       
       </>
@@ -84,29 +85,11 @@ export function App({urls}) {
 // u dont need to pass all the shit as children and then back from children to parent, you can just do all the mapping in parent
 // find way to make labelvalue fire once removelabel is done use conditional useEffect put dependency as the thing that changes
 
-
-export const Tourney = ({tourney,setCompiledDataToBeMerged}) => {
-  return (
-    <>
-         {tourney.map((user) => {
-        return (
-          <>
-          <IndividualPlayerInfo {...user} setCompiledDataToBeMerged={setCompiledDataToBeMerged}/>
- 
-          </>
-        )
-        
-      })}
-    </>
-  )
-
-}
-
 export const IndividualPlayerInfo = ({label,position,user,setCompiledDataToBeMerged}) => {
   if (position === 4) {
     label = '4'
   }
-  const [correctPosition,value] = useParse(label)
+  const value = useParse(label)
   useEffect(() => {
     if (value) {
       TourneyUsersWithValues.unshift({name:user.nickname,value:value})
@@ -123,7 +106,7 @@ export const IndividualPlayerInfo = ({label,position,user,setCompiledDataToBeMer
 export const Individualperson = ({name,value,index}) => {
   return (
     <div className='title-banner text-center'>
-    <img className="golden" src={GoldenDiv}/>
+    <img className="golden" src={GoldenDiv} alt="shao is top 5"/>
     <h1 className="display-1 inside-Golden index-Golden">{index+1}.</h1>
     <h1 className="display-1 inside-Golden text-Golden">{name}</h1>
     <h1 className="display-1 inside-Golden" id="value-Golden">{value}</h1>

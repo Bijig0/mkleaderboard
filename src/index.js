@@ -15,7 +15,7 @@ ReactDOM.render(
     <PosNameVal/>
     <Switch>
     <Route exact path ='/'>
-     {/* <LinkNavbar/> */}
+     <LinkNavbar/>
       <OCE/>
     </Route>
     <Route exact path ='/Brazil'>
