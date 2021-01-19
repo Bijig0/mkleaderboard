@@ -66,9 +66,11 @@ export function App({urls}) {
 
   return (
     <>
+    <div>
     {currentPosts.map((Person,index) => {
       return <Individualperson {...Person} index={fullIndexes[index]} />
     })}
+    </div>
     <Pagination postsPerPage={postsPerPage} totalPosts={FinalLeaderboard.length} paginate={paginate}/>
 
       {users.length > 0 && secondusers.length > 0 && listofAllTourneys.map((tourney) => {
@@ -105,11 +107,17 @@ export const IndividualPlayerInfo = ({label,position,user,setCompiledDataToBeMer
 
 export const Individualperson = ({name,value,index}) => {
   return (
-    <div className='container-fluid bg-light d-flex justify-content-evenly'>
-    <h1 className="Header">{index+1}.</h1>
-    <h1 className="Header">{name}</h1>
-    <h1 className="Header">{value}</h1>
-    </div>
+      <div className='row bg-light d-flex justify-content-center'>
+        <div className="col mx-sm-3">
+          <h1 className='text-sm-center'>{index+1}.</h1>
+        </div>
+        <div className="col">
+          <h1 className='text-sm-center'>{name}</h1>
+        </div>
+        <div className="col">
+          <h1 className='text-center'>{value}</h1>
+        </div>
+      </div>
   )
 
 }
