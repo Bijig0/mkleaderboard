@@ -66,11 +66,15 @@ export function App({urls}) {
 
   return (
     <>
-    <div>
     {currentPosts.map((Person,index) => {
-      return <Individualperson {...Person} index={fullIndexes[index]} />
+      return (
+      <>
+        <Individualperson {...Person} index={fullIndexes[index]} />
+        <hr></hr>
+      </>
+      )
+
     })}
-    </div>
     <Pagination postsPerPage={postsPerPage} totalPosts={FinalLeaderboard.length} paginate={paginate}/>
 
       {users.length > 0 && secondusers.length > 0 && listofAllTourneys.map((tourney) => {
@@ -126,7 +130,6 @@ export const Individualperson = ({name,value,index}) => {
         </div>
         <div className="col">
           {windowSize > 885? <h1 className='text-center'>{value}</h1>: <h1 className='text-end'>{value}</h1>}
-          
         </div>
       </div>
   )
