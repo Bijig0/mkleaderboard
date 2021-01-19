@@ -14,12 +14,11 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
     <Banner/>
-    <PosNameVal/>
     <Switch>
-    <Route exact path ='/'>
-     {/* <LinkNavbar/> */}
+    {/* <Route exact path ='/'>
+     <LinkNavbar/>
       <OCE/>
-    </Route>
+    </Route> */}
     <Route exact path = '/OCE'>
       <OCE/>
     </Route>

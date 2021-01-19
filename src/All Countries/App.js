@@ -7,6 +7,7 @@ import Pagination from '../pagination'
 import GoldenDiv from '../img/goldenplaceholder (2).png'
 import '../css/override.css'
 import SearchFilter from '../Components/SearchFilter';
+import {PosNameVal} from '../Components/Navbar'
 var TourneyUsersWithValues = []
 
 // make useFetch into regular function so you can loop through it
@@ -66,6 +67,7 @@ export function App({urls}) {
 
   return (
     <>
+    <PosNameVal/>
     {currentPosts.map((Person,index) => {
       return (
       <>
