@@ -106,6 +106,16 @@ export const IndividualPlayerInfo = ({label,position,user,setCompiledDataToBeMer
 }
 
 export const Individualperson = ({name,value,index}) => {
+  const [windowSize, setwindowSize] = useState(window.innerWidth)
+  const checkSize = () => {
+    setwindowSize(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener("resize",checkSize)
+    return () => {
+      window.removeEventListener("resize",checkSize)
+    }
+  },[])
   return (
       <div className='row bg-light d-flex justify-content-center'>
         <div className="col mx-sm-3">
@@ -115,7 +125,8 @@ export const Individualperson = ({name,value,index}) => {
           <h1 className='text-sm-center'>{name}</h1>
         </div>
         <div className="col">
-          <h1 className='text-center'>{value}</h1>
+          {windowSize > 885? <h1 className='text-center'>{value}</h1>: <h1 className='text-end'>{value}</h1>}
+          
         </div>
       </div>
   )
