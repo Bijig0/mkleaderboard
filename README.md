@@ -12,3 +12,4 @@ Skills learnt:
 For Next Time:
 -Implement GraphQL w Apollo
 -Formik
+-Next.js
