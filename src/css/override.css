@@ -28,7 +28,6 @@
 
 .inside-Golden {
     position: absolute;
-    top: 4vw;
 }
 
 .index-Golden {
@@ -40,7 +39,6 @@
 #value-Golden {
   position: absolute;
   margin-left: 63%;
-  top: 4vw;
   font-size: 5vw;
 }
 

@@ -105,11 +105,10 @@ export const IndividualPlayerInfo = ({label,position,user,setCompiledDataToBeMer
 
 export const Individualperson = ({name,value,index}) => {
   return (
-    <div className='title-banner'>
-    {/* <img className="golden" src={GoldenDiv} alt="shao is top 5"/> */}
-    <h1 className="display-1 inside-Golden index-Golden">{index+1}.</h1>
-    <h1 className="display-1 inside-Golden text-Golden">{name}</h1>
-    <h1 className="display-1 inside-Golden" id="value-Golden">{value}</h1>
+    <div className='container-fluid bg-light d-flex justify-content-evenly'>
+    <h1 className="Header">{index+1}.</h1>
+    <h1 className="Header">{name}</h1>
+    <h1 className="Header">{value}</h1>
     </div>
   )
 
