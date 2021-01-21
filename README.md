@@ -13,3 +13,5 @@ For Next Time:
 -Implement GraphQL w Apollo
 -Formik
 -Next.js
+
+-Confirmation this is by Brady :)
